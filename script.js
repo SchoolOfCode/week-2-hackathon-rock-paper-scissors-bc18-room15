@@ -3,8 +3,11 @@
 // create a if else loop to determine winner ✅
 //hard-code the variables to check if its working. Use console.log ✅
 // Create a function - The variables from before should now be taken in as parameters so that you can call the function with any two moves ✅ 
-// Using `prompt`, get a user-inputted value for the player move.
-// Then call your function with that value as the player move and the hard-coded computer move. Display the result using `alert`.
+// Using `prompt`, get a user-inputted value for the player move.✅
+// Then call your function with that value as the player move and the hard-coded computer move. Display the result using `alert`. ✅
+// Ensure math.random() generates into randow rock, paper, scissors and not literal numbers. 
+// Create an array which stores 3 values (rock, paper and scissors). Console.log
+// use math.random to access an index of that array.
 
 // let playerMove = "rock";
 
@@ -47,8 +50,11 @@ function getWinner(playerMove, computerMove) {
                 return 1;
        }     
 }
-let playerInput = prompt(`Type "rock", "paper" or "scissors"`);
-let result = getWinner(playerInput, "scissors");
+let playerMove = prompt(`Type "rock", "paper" or "scissors"`);
+
+let result = getWinner(playerMove, "rock");
+
+alert(result);
 
 
 // let result = getWinner("rock", "paper")
