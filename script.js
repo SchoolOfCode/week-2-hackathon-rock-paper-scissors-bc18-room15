@@ -50,11 +50,31 @@ function getWinner(playerMove, computerMove) {
                 return 1;
        }     
 }
-let playerMove = prompt(`Type "rock", "paper" or "scissors"`);
+//let playerMove = prompt(`Type "rock", "paper" or "scissors"`);
+//let moves = ["rock", "paper", "scissors"];
+// let randomMove = moves[Math.floor(Math.random() * 3)]
 
-let result = getWinner(playerMove, "rock");
+// let result = getWinner(playerMove, randomMove);
 
-alert(result);
+
+function  playGame() {  
+ let playerMove = prompt(`Type "rock", "paper" or "scissors"`);
+ let moves = ["rock", "paper", "scissors"];
+ let randomMove = moves[Math.floor(Math.random() * 3)]
+ let result = getWinner(playerMove, randomMove);      
+        
+if (result === 0) {
+        alert("It's a draw");
+} else if (result === 1) {
+        alert("Player wins");
+} else if (result === -1) {
+        alert("Computer wins");
+};
+}
+
+// console.log(moves);
+
+
 
 
 // let result = getWinner("rock", "paper")
