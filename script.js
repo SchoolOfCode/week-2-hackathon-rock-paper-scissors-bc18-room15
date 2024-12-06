@@ -14,30 +14,9 @@
         //put result of confirm into a variable ✅
         //while loop that checks if variable is true or false ✅
 // Whilst testing the game, noticed player input only accepts exact match to condition 
-        //
-
-// let playerMove = "rock";
-
-
-// if (playerMove === computerMove) {
-//          console.log("It's a draw!");
-// }   else if (playerMove === "rock" && computerMove === "paper") {
-//          console.log("Computer wins!");
-// }   else if (playerMove === "rock" && computerMove === "scissors") {
-//                 console.log("Player wins!");
-// }   else if (playerMove === "paper" && computerMove === "rock") {
-//         console.log("Player wins!");
-// }   else if (playerMove === "paper" && computerMove === "scissors") {
-//         console.log("Computer wins!");
-// }   else if (playerMove === "scissors" && computerMove === "rock") {
-//         console.log("Computer wins!");
-// }   else if (playerMove === "scissors" && computerMove === "paper") {
-//         console.log("Player wins!");
-// }
-
-// let playerMove = prompt(`Type "rock", "paper" or "scissors"`); assigning new variable to store user prompt
-// let playerInput = prompt(`Type "rock", "paper" or "scissors"`);
-// let computerMove = "scissors";
+//Keep track of how many games have been played, as well as the number of wins, losses, and draw
+// create variable gamesPlayed, losses, wins, draws. 
+//information needs to be displayed after every round. 
 
 
 
@@ -60,6 +39,11 @@ function getWinner(playerMove, computerMove) {
        }     
 }
 
+let gamesPlayed =  0;
+let wins = 0;
+let losses = 0;
+let draw = 0;
+
 function  playGame() {
 
 let continueGame = true;
@@ -69,15 +53,28 @@ while (continueGame === true) {
 let playerMove = prompt(`Type "rock", "paper" or "scissors"`).toLowerCase();
 let moves = ["rock", "paper", "scissors"];
 let randomMove = moves[Math.floor(Math.random() * 3)];
-let result = getWinner(playerMove, randomMove);      
+let result = getWinner(playerMove, randomMove);     
+
         
 if (result === 0) {
         alert("It's a draw");
+        ++draw ; 
+        ++gamesPlayed;
 } else if (result === 1) {
         alert("Player wins");
+        ++wins ; 
+        ++gamesPlayed;
 } else if (result === -1) {
         alert("Computer wins");
+        ++losses ; 
+        ++gamesPlayed;
 };
+
 continueGame = confirm("Would you like to continue?");
 }
 }
+
+
+//let score = gamesPlayed + wins + losses + draw;
+//alert(score);
+//we were working on alerting the score. However, it was not functioning as intended. 
